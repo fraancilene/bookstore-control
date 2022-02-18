@@ -1,0 +1,31 @@
+package br.com.fpsilva.bookstorecontrolapi.services;
+
+import br.com.fpsilva.bookstorecontrolapi.models.BookModel;
+import br.com.fpsilva.bookstorecontrolapi.repositories.BookRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+@Service
+public class BookService {
+    @Autowired
+    public BookRepository bookRepository;
+
+    @Transactional
+    public BookModel save(BookModel bookModel){
+        return bookRepository.save(bookModel);
+    }
+
+   public List<BookModel> findAll(){
+       return bookRepository.findAll();
+   }
+
+   public Optional<BookModel> findById(UUID id){
+        return bookRepository.findById(id);
+   }
+
+}
