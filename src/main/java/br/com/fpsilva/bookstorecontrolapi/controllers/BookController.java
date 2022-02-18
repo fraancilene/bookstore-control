@@ -39,4 +39,31 @@ public class BookController {
         return ResponseEntity.status(HttpStatus.OK).body(bookModelOptional.get());
 
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Object> deleteUser(@PathVariable(value = "id") UUID id){
+        Optional<BookModel> bookModelOptional = bookService.findById(id);
+        if (!bookModelOptional.isPresent()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Book not found!");
+        }
+
+        bookService.delete(bookModelOptional.get());
+        return ResponseEntity.status(HttpStatus.OK).body("Book deleted successfully!");
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Object> updateBook(@PathVariable(value = "id") UUID id, @RequestBody @Valid BookDto bookDto){
+        Optional<BookModel> bookModelOptional = bookService.findById(id);
+
+        // validação
+        if (!bookModelOptional.isPresent()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Book not found!");
+        }
+
+        var bookModel = new BookModel();
+        BeanUtils.copyProperties(bookDto, bookModel);
+        bookModel.setId(bookModelOptional.get().getId());
+        return ResponseEntity.status(HttpStatus.OK).body(bookService.save(bookModel));
+
+    }
 }

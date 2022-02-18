@@ -10,6 +10,7 @@ import java.util.UUID;
 @Entity
 @Getter
 @Setter
+@Table(name = "tb_user")
 public class UserModel implements Serializable {
     private static final long serialVersionUID = 1L;
 

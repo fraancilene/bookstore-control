@@ -24,7 +24,7 @@ public class BookModel implements Serializable {
     @Column(nullable = false, length = 20)
     private String genre;
 
-    @Column(nullable = false, length = 30)
+    @Column(nullable = false, length = 100)
     private String author;
 
 }

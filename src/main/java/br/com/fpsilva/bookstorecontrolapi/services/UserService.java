@@ -16,6 +16,8 @@ public class UserService {
 
     @Autowired
     private UserRepository userRepository;
+
+
     @Transactional
     public UserModel save(UserModel userModel){
         return userRepository.save(userModel);
@@ -29,4 +31,8 @@ public class UserService {
         return userRepository.findById(id);
     }
 
+    @Transactional
+    public void delete(UserModel userModel) {
+        userRepository.delete(userModel);
+    }
 }
