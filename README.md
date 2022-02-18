@@ -1,7 +1,6 @@
 # Controle de Livraria
 
 ## API para controle de uma livraria
-Uma API básica para controle de uma livraria
 
 ### Sobre o projeto
 
