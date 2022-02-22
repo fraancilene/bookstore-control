@@ -2,9 +2,15 @@
 
 ## API para controle de uma livraria
 
-### Sobre o projeto
+### :pencil: Sobre o projeto
 
-### Ferramentas utilizadas
+### :gear: Funcionalidades implementadas 
+1. Rotas implementadas seguindo as boas práticas do modelo REST
+2. Implementação de base de dados para persistência das informações
+3. CRUD implementado
+4. Melhorias à serem feitas
+
+### :hammer_and_wrench: Ferramentas utilizadas
 <div>
   <img align="center" height="60" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-plain-wordmark.svg" />
   <img align="center" height="60" width="60" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg">
